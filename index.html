@@ -6,9 +6,30 @@
     <title>Encriptador AndyJ</title>
 </head>
 <body>
+    <header>
+        <img src="img/Logo.png" alt="Logo de Alura">
+    </header>
     <main>
-        <h1>Encriptador AndyJ.</h1>
+        <div class="contenedor_izquierdo">
+            <h1>Ingrese el texto aqui</h1>
+            <form action="texto">
+                <input type="text" min="1" max="100" id="valorUsuario" >
+            <div class="validation-message">
+                <span class="validation-icon">⚠️</span>
+                <span>Solo letras minúsculas y sin acentos</span>
+            </div>
+            <button>Encriptar</button>
+            <button>Desencriptar</button>
+            </form>
+        </div>
+        <div class="contenedor_derecho">
+            <img src="img/Muñeco.png" alt="imagen de un muñecon con una lupa">
+            <p>Ningun mensaje fue encontrado</p>
+            <p>Ingresa el texto que desees encriptar o desencriptar</p>
+        </div>
     </main>
-    
+    <footer>
+        <p>Andy Jimenez 07/2024</p>
+    </footer>
 </body>
 </html>
