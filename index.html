@@ -1,36 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Encriptador AndyJ</title>
-    <link rel="stylesheet" href="Estilos.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css">
 </head>
 <body>
     <header>
-        <img src="assets/Logo.png" alt="Logo de Alura">
+        <img class="logo" src="assets/Logo.png" alt="Logo de Alura">
     </header>
-    <main>
-        <div class="contenedor_izquierdo">
-            <h1>Ingrese el texto aqui</h1>
-            <form action="texto">
-                <input type="text" min="1" max="100" id="valorUsuario" >
-            <div class="validation-message">
-                <span class="validation-icon">⚠️</span>
-                <span>Solo letras minúsculas y sin acentos</span>
-            </div>
-            <button>Encriptar</button>
-            <button>Desencriptar</button>
+    <main class="principal">
+        <section class="contenedor_uno">
+                <form method="post" action="#">
+                <label for="valorUsuario"></label>
+                <textarea id="valorUsuario" class="input_texto" name="texto" pattern="[a-z ]+" title="Solo letras minúsculas y sin acentos" placeholder="Ingrese el texto aqui" required></textarea>
+                <div class="validation-message">
+                    <i class="bi bi-exclamation-circle-fill"></i>
+                    <span class="aviso_texto">Solo letras minúsculas y sin acentos</span>
+                </div>
+                <div class="contenedor_uno_botones">
+                    <button  class="boton_uno" type="button" onclick="encriptarTexto()">Encriptar</button>
+                    <button class="boton_dos" type="button" onclick="desencriptarTexto()">Desencriptar</button>
+                </div>
             </form>
-        </div>
-        <div class="contenedor_derecho">
-            <img src="assets/Muñeco.png" alt="imagen de un muñecon con una lupa">
-            <p>Ningun mensaje fue encontrado</p>
-            <p>Ingresa el texto que desees encriptar o desencriptar</p>
-        </div>
+        </section>
+        <section  class="contenedor_dos">
+            <div class="sin-texto">
+                <img class="muñeco" src="assets/Muñeco.png" alt="Imagen de un muñeco con una lupa">
+                <p class="contenedor_dos_texto_uno">Ningún mensaje fue <br> encontrado</p>
+                <p class="contenedor_dos_texto_dos">Ingresa el texto que desees encriptar o desencriptar</p>
+            </div>
+            <div class="con-texto hidden">
+                <p id="texto-encriptado"></p>
+                <div class="contenedor_dos_boton">
+                    <button class="copiar" onclick="copiarTexto()">Copiar</button>
+            </div>
+            </div>
+        </section>
+            
     </main>
-    <footer>
-        <p>Andy Jimenez 07/2024</p>
-    </footer>
+    <script src="app.js"></script>
 </body>
 </html>
+
