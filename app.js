@@ -1,6 +1,18 @@
+// Función para validar el texto
+function validarTexto(texto) {
+    const regex = /^[a-z\s]+$/;
+    return regex.test(texto);
+}
+
 // Función para encriptar el texto
 function encriptarTexto() {
     let texto = document.getElementById("valorUsuario").value;
+
+    if (!validarTexto(texto)) {
+        alert("El texto solo debe contener letras minúsculas y sin acentos.");
+        return;
+    }
+
     let textoEncriptado = texto
         .replace(/e/g, "enter")
         .replace(/i/g, "imes")
@@ -13,6 +25,12 @@ function encriptarTexto() {
 // Función para desencriptar el texto
 function desencriptarTexto() {
     let texto = document.getElementById("valorUsuario").value;
+
+    if (!validarTexto(texto)) {
+        alert("El texto solo debe contener letras minúsculas y sin acentos.");
+        return;
+    }
+
     let textoDesencriptado = texto
         .replace(/enter/g, "e")
         .replace(/imes/g, "i")
@@ -51,7 +69,7 @@ function copiarTexto() {
                 document.querySelector(".con-texto").appendChild(mensaje);
             }
 
-            mensaje.innerText = "Texto copiado al portapapeles!";
+            mensaje.innerText = "Texto copiado!";
             mensaje.style.display = 'block';
 
             // Ocultar el mensaje después de 3 segundos

@@ -1,9 +1,9 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
 
 :root {
     --color-primario: #e5e5e5;
     --color-secundario: #0A3871;
+    --color-terciario: #ffffff;
 }
 
 * {
@@ -18,6 +18,7 @@ body {
     height: 100vh;
     font-family: "Inter", sans-serif;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -25,14 +26,13 @@ body {
 header {
     width: 100%;
     display: flex;
-    justify-content: flex-start; /* Alinea los contenidos a la izquierda */
+    justify-content: flex-start;
     align-items: center;
     padding: 20px;
-    position: absolute; /* Asegura que el header esté en la parte superior */
+    position: absolute;
     top: 0;
     left: 0;
 }
-
 
 .logo {
     width: 100px;
@@ -46,6 +46,7 @@ header {
     margin: 0 2%;
     justify-content: space-between;
     width: 90%;
+    flex: 1; /* Hace que el contenido principal tome el espacio disponible */
 }
 
 .contenedor_uno {
@@ -66,7 +67,7 @@ header {
     resize: none;
     outline: none;
     padding: 10px;
-    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
 }
 
@@ -92,17 +93,16 @@ header {
 .contenedor_uno_botones {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
+    margin-top: 25px;
 }
 
 .boton_uno,
 .boton_dos {
     border: solid 1px var(--color-secundario);
     font-size: 16px;
-    width: 48%;
-    height: 50px;
-    padding: 10px;
-    border-radius: 8px;
+    width: 332px;
+    height: 67px;
+    border-radius: 24px;
     font-family: "Inter", sans-serif;
     cursor: pointer;
 }
@@ -123,8 +123,8 @@ header {
     padding: 20px;
     border-radius: 16px;
     text-align: center;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    min-height: 300px; /* Altura mínima para evitar que el contenedor sea demasiado pequeño */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -134,9 +134,8 @@ header {
 #texto-encriptado {
     margin-bottom: 20px;
     font-size: 16px;
-    word-wrap: break-word; /* Asegura que el texto no desborde */
+    word-wrap: break-word;
 }
-
 
 .muñeco {
     width: 80%;
@@ -179,16 +178,145 @@ header {
 
 .mensaje-elegante {
     padding: 10px;
-    background-color: #4CAF50; /* Color verde para éxito */
+    background-color: #4CAF50;
     color: white;
     border-radius: 5px;
     margin-top: 10px;
     text-align: center;
-    display: none; /* Oculto por defecto */
-    animation: fadeInOut 3s ease-in-out; /* Añade una animación */
+    display: none;
+    animation: fadeInOut 3s ease-in-out;
 }
 
 @keyframes fadeInOut {
     0%, 100% { opacity: 0; }
     10%, 90% { opacity: 1; }
+}
+
+.footer {
+    background-color: var(--color-secundario);
+    padding: 4px;
+    color: white;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    position: relative;
+    bottom: 0;
+    margin-top: auto;
+    width: 100%;
+}
+
+/*para tablet*/
+@media (max-width: 1023px) {
+    .principal {
+        flex-direction: column;
+        gap: 64px;
+    }
+
+    .contenedor_uno {
+        width: 688px;
+        margin: 400px 40px 0px 40px;
+        padding: 0;
+    }
+
+    .contenedor_dos {
+        width: 688px;
+        height: 133px;
+        margin: 4px 40px 40px 40px;
+        border-radius: 32px;
+        text-align: justify;
+        padding: 0;
+        text-align: center;
+    }
+
+    .input_texto {
+        height: 500px;
+    }
+
+    .muñeco {
+        display: none;
+    }
+
+    .contenedor_uno_botones {
+        width: 688px;
+        margin: 16px 40px 2px 40px;
+    }
+
+    .copiar {
+        width: 624px;
+        height: 67px;
+        border-radius: 24px;
+        margin: 32px;
+    }
+}
+
+/* Media queries for mobile responsiveness */
+@media (max-width: 768px) {
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .principal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box; /* Asegura que el padding no exceda el ancho de la pantalla */
+    }
+
+    .contenedor_uno, .contenedor_dos {
+        width: 100%;
+        text-align: center;
+    }
+
+    .contenedor_uno_botones {
+        display: flex;
+        flex-direction: column; /* Coloca los botones en una columna */
+        gap: 10px; /* Espacio entre los botones */
+        width: 100%;
+        align-items: center;
+    }
+
+    .boton_uno, .boton_dos {
+        font-size: 16px;
+        font-family: "Inter", sans-serif;
+        width: 342px;
+        height: 67px;
+        border: solid 1px var(--color-secundario);
+        border-radius: 24px;
+        margin-bottom: 24px;
+    }
+
+    .boton_uno {
+        color: white;
+        background-color: var(--color-secundario);
+    }
+    
+    .boton_dos {
+        color: var(--color-secundario);
+        background-color: #d8dfe8;
+        margin-bottom: 10px;
+    }
+
+    .input_texto {
+        width: 100%;
+        font-size: 16px;
+        height: 440px; /* Incrementa la altura del área de texto */
+        margin: 10px 0; /* Espacio vertical */
+        padding: 10px; /* Espacio interior */
+        box-sizing: border-box;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+    }
+
+    .contenedor_dos_texto_uno {
+        font-size: 18px;
+        margin: 20px 0 10px; /* Margen superior e inferior */
+    }
+
+    .contenedor_dos_texto_dos {
+        font-size: 14px;
+        color: #6c757d;
+    }
 }
