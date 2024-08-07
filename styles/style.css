@@ -176,9 +176,9 @@ header {
     display: none;
 }
 
-.mensaje-elegante {
+.mensaje-advertencia {
     padding: 10px;
-    background-color: #4CAF50;
+    background-color: #ff4c4c;
     color: white;
     border-radius: 5px;
     margin-top: 10px;

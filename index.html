@@ -13,9 +13,10 @@
     </header>
     <main class="principal">
         <section class="contenedor_uno">
-                <form method="post" action="#">
+            <form method="post" action="#">
                 <label for="valorUsuario"></label>
                 <textarea id="valorUsuario" class="input_texto" name="texto" pattern="[a-z ]+" title="Solo letras minúsculas y sin acentos" placeholder="Ingrese el texto aqui" required></textarea>
+                <div id="mensaje-error" class="mensaje-advertencia hidden"></div> 
                 <div class="validation-message">
                     <i class="bi bi-exclamation-circle-fill"></i>
                     <span class="aviso_texto">Solo letras minúsculas y sin acentos</span>
@@ -36,7 +37,7 @@
                 <p id="texto-encriptado"></p>
                 <div class="contenedor_dos_boton">
                     <button class="copiar" onclick="copiarTexto()">Copiar</button>
-            </div>
+                </div>
             </div>
         </section>
     </main>
@@ -57,4 +58,3 @@
     <script src="app.js"></script>
 </body>
 </html>
-

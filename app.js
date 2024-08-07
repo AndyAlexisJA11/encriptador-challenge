@@ -9,7 +9,7 @@ function encriptarTexto() {
     let texto = document.getElementById("valorUsuario").value;
 
     if (!validarTexto(texto)) {
-        alert("El texto solo debe contener letras minúsculas y sin acentos.");
+        mostrarMensajeError("El texto solo debe contener letras minúsculas y sin acentos.");
         return;
     }
 
@@ -27,7 +27,7 @@ function desencriptarTexto() {
     let texto = document.getElementById("valorUsuario").value;
 
     if (!validarTexto(texto)) {
-        alert("El texto solo debe contener letras minúsculas y sin acentos.");
+        mostrarMensajeError("El texto solo debe contener letras minúsculas y sin acentos.");
         return;
     }
 
@@ -44,7 +44,7 @@ function desencriptarTexto() {
 function mostrarResultado(resultado) {
     let contenedorTexto = document.querySelector(".con-texto");
     let sinTexto = document.querySelector(".sin-texto");
-    
+
     if (resultado) {
         document.getElementById("texto-encriptado").innerText = resultado;
         contenedorTexto.classList.remove("hidden");
@@ -55,29 +55,46 @@ function mostrarResultado(resultado) {
     }
 }
 
-//funcion para copiar el texto
+// Función para mostrar el mensaje de error
+function mostrarMensajeError(mensaje) {
+    let mensajeError = document.getElementById("mensaje-error");
+    mensajeError.textContent = mensaje;
+    mensajeError.classList.remove("hidden");
+    mensajeError.style.display = "block";
+    setTimeout(() => {
+        mensajeError.style.display = "none";
+    }, 3000); // Ocultar el mensaje después de 3 segundos
+}
+
 function copiarTexto() {
     let texto = document.getElementById("texto-encriptado").innerText;
-    navigator.clipboard.writeText(texto)
-        .then(() => {
-            let mensaje = document.getElementById("mensaje");
+    let textarea = document.createElement('textarea');
+    textarea.value = texto;
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+        document.execCommand('copy');
+        console.log("Texto copiado con éxito.");
+        let mensaje = document.getElementById("mensaje");
 
-            if (!mensaje) {
-                mensaje = document.createElement("div");
-                mensaje.id = "mensaje";
-                mensaje.className = "mensaje-elegante";
-                document.querySelector(".con-texto").appendChild(mensaje);
-            }
+        if (!mensaje) {
+            mensaje = document.createElement("div");
+            mensaje.id = "mensaje";
+            mensaje.className = "mensaje-advertencia";
+            document.querySelector(".con-texto").appendChild(mensaje);
+        }
 
-            mensaje.innerText = "Texto copiado!";
-            mensaje.style.display = 'block';
+        mensaje.innerText = "Texto copiado!";
+        mensaje.style.display = 'block';
 
-            // Ocultar el mensaje después de 3 segundos
-            setTimeout(() => {
-                mensaje.style.display = 'none';
-            }, 3000);
-        })
-        .catch(err => {
-            console.error("Error al copiar el texto: ", err);
-        });
+        // Ocultar el mensaje después de 3 segundos
+        setTimeout(() => {
+            mensaje.style.display = 'none';
+        }, 3000);
+    } catch (err) {
+        console.error("Error al copiar el texto: ", err);
+    } finally {
+        document.body.removeChild(textarea);
+    }
 }
+
