@@ -276,6 +276,8 @@ header {
         gap: 10px; /* Espacio entre los botones */
         width: 100%;
         align-items: center;
+        margin-left: 0;
+        margin-right: 0;
     }
 
     .boton_uno, .boton_dos {
@@ -285,38 +287,62 @@ header {
         height: 67px;
         border: solid 1px var(--color-secundario);
         border-radius: 24px;
-        margin-bottom: 24px;
     }
 
     .boton_uno {
         color: white;
         background-color: var(--color-secundario);
+        margin-bottom: 24px;
     }
     
     .boton_dos {
         color: var(--color-secundario);
         background-color: #d8dfe8;
-        margin-bottom: 10px;
+        margin-bottom: 0;
     }
 
     .input_texto {
         width: 100%;
         font-size: 16px;
-        height: 440px; /* Incrementa la altura del área de texto */
-        margin: 10px 0; /* Espacio vertical */
+        height: 440px; 
+        margin: 10px 0; 
         padding: 10px; /* Espacio interior */
         box-sizing: border-box;
         border: 1px solid #ced4da;
         border-radius: 5px;
     }
 
+    .contenedor_dos {
+        width: 688px;
+        height: 133px;
+        margin: 0 10px 40px 10px;
+        border-radius: 32px;
+        text-align: justify;
+        padding: 0;
+        text-align: center;
+    }
+
     .contenedor_dos_texto_uno {
         font-size: 18px;
-        margin: 20px 0 10px; /* Margen superior e inferior */
+        margin: 0px 0 10px; 
     }
 
     .contenedor_dos_texto_dos {
         font-size: 14px;
         color: #6c757d;
+    }
+
+    .copiar {
+        font-size: 16px;
+        background-color: white;
+        font-family: "Inter", sans-serif;
+        color: var(--color-secundario);
+        border-radius: 24px;
+        border: solid 1px #0A3871;
+        text-align: center;
+        align-items: center;
+        width: 100px;
+        cursor: pointer;
+        padding: 10px;
     }
 }
