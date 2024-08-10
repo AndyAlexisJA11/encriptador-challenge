@@ -250,6 +250,13 @@ header {
 
 /* Media queries for mobile responsiveness */
 @media (max-width: 768px) {
+    
+    .logo {
+        width: 100px;
+        height: auto;
+        margin: 0px;
+    }
+
     body {
         margin: 0;
         padding: 0;
@@ -263,6 +270,7 @@ header {
         width: 100%;
         padding: 20px;
         box-sizing: border-box; /* Asegura que el padding no exceda el ancho de la pantalla */
+        margin-top: 64px;
     }
 
     .contenedor_uno, .contenedor_dos {
@@ -313,9 +321,9 @@ header {
     }
 
     .contenedor_dos {
-        width: 688px;
+        width: 100%;
         height: 133px;
-        margin: 0 10px 40px 10px;
+        margin: 0 40px 40px 40px;
         border-radius: 32px;
         text-align: justify;
         padding: 0;
