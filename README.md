@@ -1,13 +1,13 @@
-Encriptador AndyJ
+                                                                      Encriptador AndyJ
 Este proyecto es una herramienta simple de encriptación y desencriptación de texto, desarrollada en HTML, CSS y JavaScript. El encriptador está diseñado para reemplazar las vocales de un texto con una cadena específica, y el desencriptador revierte el proceso.
 
 Características
-Encriptación personalizada: Convierte las vocales de un texto en secuencias específicas.
-e se convierte en enter
-i se convierte en imes
-a se convierte en ai
-o se convierte en ober
-u se convierte en ufat
+    Encriptación personalizada: Convierte las vocales de un texto en secuencias específicas.
+    e se convierte en enter
+    i se convierte en imes
+    a se convierte en ai
+    o se convierte en ober
+    u se convierte en ufat
 Desencriptación: Revertir el texto encriptado a su forma original.
 Validación: Solo permite letras minúsculas sin acentos.
 Copia rápida: Permite copiar el texto encriptado al portapapeles.
